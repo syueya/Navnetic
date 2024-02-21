@@ -1,0 +1,261 @@
+
+.search-bookmark-name a {
+  overflow: hidden; /* 超出隐藏，以防止内容溢出容器 */
+  text-overflow: ellipsis; /* 超出省略号显示，以示内容被隐藏 */
+  padding: 0rem .35rem 0rem .35rem;
+  color: #415B75; /* 设置链接文本的颜色 */
+  text-decoration: none; /* 取消下划线 */
+  font-size: .8rem;
+  line-height: 1rem; /* 行高 */
+}
+
+ /* 设置鼠标悬停时样式 */
+.search-bookmark-name a:hover {
+    font-weight: bold;  /* 加粗 */
+    color: #415B75; /* 颜色 */
+}
+
+
+.search-bookmark-description {
+  overflow: hidden; /* 超出隐藏，以防止内容溢出容器 */
+  text-overflow: ellipsis; /* 超出省略号显示，以示内容被隐藏 */
+  padding: 0rem .35rem 0rem .35rem;
+  font-size: .8rem;
+  line-height: 1rem; /* 行高 */
+  float: right; /* 根据需要进行样式调整，比如margin, padding等 */
+  color: #64748B; /* 颜色 */
+}
+
+
+/*  侧边栏主体  */
+.sidebar {
+  position: fixed;
+  top: 3.6rem;
+  font-size: .85em;
+  padding: .35rem .35rem 0.5rem .35rem;
+  width: 180px;
+  height: calc(100vh - 3.6rem);
+  background-color: #FFFFFF;
+  overflow-y: scroll;  /* overflow 控制元素内容溢出时如何处理 */
+  box-sizing: border-box;
+}
+
+
+/* 侧边栏滚动条 */
+.sidebar::-webkit-scrollbar {
+  width: 5px;  /* 设置滚动条的宽f度 */
+  background-color: #FFFFFF;  /* 设置滚动条背景颜色 */
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #E1E1E1;  /* 设置滚动条的颜色 */
+}
+
+/* 侧边栏链接 */
+.sidebar a {
+  font-weight: 400;
+  display: block;
+  color: #00323c;
+  padding: .35rem 1rem .35rem 1rem;
+  line-height: 1.4;
+  text-decoration: none;
+  border-left: .25rem solid transparent;  /*左边框样式 */
+  cursor: default; /* 鼠标为默认箭头指针 */
+}
+
+/*  鼠标悬停时状态  */
+.sidebar a:hover:not(.active) {
+  border-left-color: #11a8cd;
+  color: #11a8cd;
+  font-weight: bold;
+}
+
+
+/*  导航页主体  */
+main {
+  position: fixed;
+  top: 3.6rem;
+  display: flex;
+  margin-left: 180px; /* 与 侧边栏 的宽度相同*/
+  width: calc(100vw - 180px);
+  background-color: #F4F4F4;
+}
+
+/*  导航页主体  */
+.layout-pages {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  margin: 1rem 0rem 1rem 1rem;   /* 上右下左 */
+  padding: 0.5rem 1rem 1rem 1rem;
+  height: calc(100vh - 3.6rem); /* 100vh 表示视口高度的百分比（vh 单位表示视口高度的1%）*/
+  overflow-y: scroll;
+}
+
+
+/* 侧边栏滚动条 */
+.layout-pages::-webkit-scrollbar {
+  width: 5px;  /* 设置滚动条的宽度 */
+  background-color: #FFFFFF;  /* 设置滚动条背景颜色 */
+}
+.layout-pages::-webkit-scrollbar-thumb {
+  background-color: #D0D0D0;  /* 设置滚动条的颜色 */
+}
+
+
+/* 类 */
+.bookmark-group{
+  flex-basis: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 4px; /* 设置元素的边距为4px */
+}
+
+/*  类图标名称 */
+.group {
+  display: flex; /* 将元素变为弹性容器，使用弹性布局进行排列和对齐子元素。 */
+  width: 100%;
+  align-items: center; /* 垂直居中 */
+}
+
+/* 分类图标样式 */
+.bookmark-group-icon {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-right: .5rem;
+}
+
+/*  分类名称字体颜色  */
+.bookmark-group-name {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.75rem; /* 28px */
+}
+
+
+/* 网址列表整体 */
+.bookmark-list-area {
+  display: block
+}
+
+/* 网址列表 */
+.bookmark-list {
+  list-style-type: none;  /* 设置ul使其不显示默认的列表项目符号 */
+  display: grid; /* 将元素变为网格容器，使用网格布局进行子元素的排列。 */
+  grid-template-columns: repeat(4,minmax(0,1fr));   /* 包含四列的网格布局 */
+  column-gap: 8px;    /* 多列布局的列之间的间距设置为 8px */
+  margin-top: 12px;
+}
+
+
+
+/* 网址列表 */
+.bookmark-href {
+  font-weight: 500;
+  text-align: left;
+  border-radius: 6px; /* 设置边框的圆角半径为 6 像素。这会使边框的四个角变为圆角形状。*/
+  cursor: pointer;   /*鼠标指针会变成一个小手的形状，表示该元素是可点击的*/
+  width: 100%;
+  display: block; /* 元素将以块级元素的形式显示，会独占一行。*/
+  margin-bottom: 12px;
+}
+
+
+.flex {
+  display: flex;
+}
+
+/* 网址图标方框 */
+.bookmark-icon-area {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  font-weight: 500;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  border-top-left-radius: .375em;
+  border-bottom-left-radius: .375em;
+  background-color: #E6EAED;
+}
+
+
+/* 网址图标 */
+.bookmark-icon {
+  flex-shrink: 0;  /* flex-shrink 属性的项目的值都为 0 时，它们将保持原始的大小，不会因为弹性容器的大小而收缩 */
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+
+/* 网址文字 */
+.bookmark-text {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  align-items: center;
+  justify-content: space-between;
+  border-top-right-radius: .375rem;
+  border-bottom-right-radius: .375rem;
+  background-color: #F5F7F9;  /* 设置背景颜色 */
+}
+
+
+/* 网址名称字体颜色 */
+.bookmark-name {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  padding-left: .75rem;
+  font-size: .75rem;
+  line-height: 1rem; /* 行高 */
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  color: #334155; /* 颜色 */
+  float: left; /* 根据需要进行样式调整，比如margin, padding等 */
+}
+
+/* 网址描述字体颜色 */
+.bookmark-description {
+  font-size: .75rem;
+  line-height: 1rem; /* 行高 */
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  float: right; /* 根据需要进行样式调整，比如margin, padding等 */
+  color: #64748B; /* 颜色 */
+}
+
+
+
+/*在屏幕宽度小于等于 1000 像素时，将应用以下样式*/
+@media screen and (max-width: 1000px) {
+
+  /* sidebar 样式调整 */
+  .sidebar {
+    width: 180px; /* 设置宽度为100% */
+    position: relative;
+  }
+
+  /*  导航页主体  */
+  main {
+    position: fixed;
+    top: 3.6rem;
+    display: flex;
+    left: 180px; /* 将 main 向右偏移侧边栏的宽度 */
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc(100% - 200px); /* 100vh 表示视口高度的百分比（vh 单位表示视口高度的1%）*/
+  }
+  .layout-pages {
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  }
+  .bookmark-list {
+    grid-template-columns: repeat(2,minmax(0,1fr));   /* 包含2列的网格布局 */
+  }
+
+}

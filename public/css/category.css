@@ -1,0 +1,58 @@
+
+.search-idColumn, .search-nameColumn {
+  overflow: hidden; /* 超出隐藏，以防止内容溢出容器 */
+  text-overflow: ellipsis; /* 超出省略号显示，以示内容被隐藏 */
+  padding: .35rem .35rem .35rem .35rem;
+  color: #415B75; /* 设置链接文本的颜色 */
+  font-weight: bold;  /* 加粗 */
+  text-decoration: none; /* 取消下划线 */
+  font-size: .8rem;
+  line-height: 1rem; /* 行高 */
+}
+
+
+/* 文字说明 */
+.toolbar-text-1 {
+  background-color: #FFFFFF;
+  padding: 0.35rem 1.85rem 0.35rem 1.85rem;   /* 上右下左 */
+  margin-right: auto;
+}
+
+/* 添加按钮 */
+.add-button-category {
+  background-color: #19BE6B;
+  color: white;
+}
+
+/* 批量删除按钮 */
+.multi-delete-button-category {
+  background-color: #FF9900;
+  color: white;
+}
+
+.add-button-category, .multi-delete-button-category {
+  margin-left: 10px;
+  padding: 0.5rem 1.85rem 0.5rem 1.85rem;   /* 上右下左 */
+}
+
+
+/* 编辑按钮 */
+.edit-button-category {
+  background-color: #2D8CF0;
+  color: white;
+}
+
+/* 删除按钮 */
+.delete-button-category {
+  background-color: #ED4014;
+  color: white;
+}
+
+
+
+/* 批量删除分类内容字体 */
+.choose-category label {
+  font-size: 12px; /* 设置字体大小 */
+  color: #757C8C;
+}
+

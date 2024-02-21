@@ -1,0 +1,10 @@
+[
+    {
+        "category_name": "示例",
+        "category_id": "ex",
+        "name": "TMDB",
+        "icon": "themoviedb.png",
+        "href": "https://www.themoviedb.org/",
+        "description": ""
+    }
+]

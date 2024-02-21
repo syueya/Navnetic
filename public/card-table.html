@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Navnetic</title>
+  <link rel="stylesheet" href="css/table-card.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/manage.css">
+  <link rel="icon" href="images/navnetic.png" type="image/png">
+</head>
+<body>
+
+  <!--页眉-->
+  <header class="navbar">
+    <div aria-current="page" class="home-link">
+      <img src="images/navnetic.png" alt="navnetic" class="logo">
+      <span class="site-name">夏夏子的导航</span>
+    </div>
+    <!--搜索框和导航栏-->
+    <div class="links" >
+      <!--搜索框-->
+      <div class="search-box">
+        <input aria-label="Search" autocomplete="off" spellcheck="false">
+        <div class="search-results" id="searchResults">
+        <!--搜索结果-->
+        </div>
+      </div>
+      <!--导航栏-->
+      <nav class="nav-links">
+        <div class="nav-item">
+          <a href="home.html">主页</a>
+        </div>
+        <div class="nav-item">
+          <a href="category.html">分类管理</a>
+        </div>
+        <div class="nav-item">
+          <a href="/" aria-current="page">卡片列表</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- 导航主体 -->
+  <main class="pages">
+    <div id="layout-groups" class="layout-pages">
+      <!-- 卡片列表 -->
+      <div id="card-list"  class="page-content">
+        <div class="toolbar">
+          <div class="toolbar-text-2">
+            <span>😊 所属分类</span>
+            <div class="category-select-all" aria-label="所属分类">
+              <select id="category-select">
+                <option value="">请选择</option>
+              </select>
+              <span class="arrow">&#9660;</span>
+            </div>
+          </div>
+          <div>
+            <button class="add-button-card">添加</button>
+            <button class="multi-delete-button-card">批量删除</button>
+          </div>
+        </div>
+        <table id="myTable-card">
+          <thead>
+            <tr>
+              <th>选择</th>
+              <th>序号</th>
+              <th>所属分类</th>
+              <th>名称</th>
+              <th>图标</th>
+              <th>链接</th>
+              <th>描述</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody-card">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- 添加模态框 -->
+  <div class="modal" id="add_Modal-card" >
+    <div class="modal-content"  id="add_modal-content-card">
+      <span class="close" id="add_close-card">&times;</span>
+      <label>
+        请输入你要添加的网页:
+      </label>
+      <label>
+        所属分类:
+        <input type="text" id="add_categoryInput-card">
+      </label>
+      <label>
+        名称:
+        <input type="text" id="add_NameInput-card">
+      </label>
+      <label>
+        图标名称:
+        <input type="text" id="add_iconInput-card">
+      </label>
+      <label>
+        链接:
+        <input type="text" id="add_hrefput-card">
+      </label>
+      <label>
+        描述:
+        <input type="text" id="add_descriptionInput-card">
+      </label>
+      <button class="saveButton" id="add_saveButton-card">保存</button>
+    </div>
+  </div>
+
+  <!-- 添加模态框的保存模态框 -->
+  <div class="popup_save" id="add_popup_save-card">
+    <span class="close" id="add_close_save-card">&times;</span>
+    <span class="popupText_save" id="add_popupText_save-card" ></span>
+  </div>
+
+  <!-- 编辑模态框 -->
+  <div  class="modal" id="edit_Modal-card">
+    <div class="modal-content" id="edit_modal-content-card">
+      <span class="close" id="edit_close-card">&times;</span>
+      <label>
+        请修改你要编辑的网页:
+      </label>
+      <label>
+        所属分类:
+        <input type="text" id="edit_categoryInput-card">
+      </label>
+      <label>
+        名称:
+        <input type="text" id="edit_NameInput-card">
+      </label>
+      <label>
+        图标名称:
+        <input type="text" id="edit_iconInput-card">
+      </label>
+      <label>
+        链接:
+        <input type="text" id="edit_hrefput-card">
+      </label>
+      <label>
+        描述:
+        <input type="text" id="edit_descriptionInput-card">
+      </label>
+      <button class="saveButton" id="edit_saveButton-card">保存</button>
+    </div>
+  </div>
+
+  <!-- 编辑模态框的保存模态框 -->
+  <div class="popup_save" id="edit_popup_save-card">
+    <span class="close" id="edit_close_save-card">&times;</span>
+    <span class="popupText_save" id="edit_popupText_save-card"></span>
+  </div>
+
+
+  <!-- 删除模态框 -->
+  <div  class="modal" id="del_Modal-card">
+    <div class="modal-content" id="del_modal-content-card">
+      <span class="close" id="del_close-card">&times;</span>
+      <label>
+        你真的要删除这个网页吗？
+      </label>
+      <label>
+        所属分类:
+        <input type="text" id="del_categoryInput-card">
+      </label>
+      <label>
+        名称:
+        <input type="text" id="del_NameInput-card">
+      </label>
+      <label>
+        图标名称:
+        <input type="text" id="del_iconInput-card">
+      </label>
+      <label>
+        链接:
+        <input type="text" id="del_hrefput-card">
+      </label>
+      <label>
+        描述:
+        <input type="text" id="del_descriptionInput-card">
+      </label>
+      <button class="saveButton" id="del_saveButton-card">确定</button>
+    </div>
+  </div>
+  <!-- 删除模态框的保存模态框 -->
+  <div class="popup_save" id="del_popup_save-card">
+    <span class="close" id="del_close_save-card">&times;</span>
+    <span class="popupText_save" id="del_popupText_save-card"></span>
+  </div>
+
+    <!-- 批量删除模态框 -->
+  <div  class="modal" id="multi_del_Modal-card">
+    <div class="modal-content" id="multi_del_modal-content-card">
+      <span class="close" id="multi_del_close-card">&times;</span>
+      <label>
+        你真的要删除这些网页吗？
+      </label>
+      <div class="choose-card">
+      </div>
+      <button class="saveButton" id="multi_del_saveButton-card">确定</button>
+    </div>
+  </div>
+  <!-- 删除模态框的保存模态框 -->
+  <div class="popup_save" id="multi_del_popup_save-card">
+    <span class="close" id="multi_del_close_save-card">&times;</span>
+    <span class="popupText_save" id="multi_del_popupText_save-card"></span>
+  </div>
+
+  <!--引入 卡片列表搜索 js文件-->
+  <script src="js/search_card.js"></script>
+  <!-- 引入 下拉框选项 js文件 -->
+  <script src="js/category-select.js"></script>
+  <!--引入 卡片列表 js文件-->
+  <script src="js/table-card.js"></script>
+  <!-- 在网页中加载 jQuery 库 -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- 在前端HTML文件中引入 jQuery UI 库 -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- 引入 添加按钮对应的的 js文件 -->
+  <script src="js/card_add.js"></script>
+  <!-- 引入 编辑按钮对应的的 js文件 -->
+  <script src="js/card_edit.js"></script>
+  <!-- 引入 删除按钮对应的的 js文件 -->
+  <script src="js/card_del.js"></script>
+  <!-- 引入 批量删除按钮对应的的 js文件 -->
+  <script src="js/card_multi_del.js"></script>
+  <!-- 引入 拖动排序对应的的 js文件 -->
+  <script src="js/card_sortable.js"></script>
+
+</body>
+</html>

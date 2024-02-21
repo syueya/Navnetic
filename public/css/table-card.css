@@ -1,0 +1,145 @@
+
+.search-card-name a {
+  overflow: hidden; /* 超出隐藏，以防止内容溢出容器 */
+  text-overflow: ellipsis; /* 超出省略号显示，以示内容被隐藏 */
+  padding: 0rem .35rem 0rem .35rem;
+  color: #415B75; /* 设置链接文本的颜色 */
+  text-decoration: none; /* 取消下划线 */
+  font-size: .8rem;
+  line-height: 1rem; /* 行高 */
+}
+
+ /* 设置鼠标悬停时样式 */
+.search-card-name a:hover {
+    font-weight: bold;  /* 加粗 */
+    color: #415B75; /* 颜色 */
+}
+
+
+.search-card-description {
+  overflow: hidden; /* 超出隐藏，以防止内容溢出容器 */
+  text-overflow: ellipsis; /* 超出省略号显示，以示内容被隐藏 */
+  padding: 0rem .35rem 0rem .35rem;
+  font-size: .8rem;
+  line-height: 1rem; /* 行高 */
+  float: right; /* 根据需要进行样式调整，比如margin, padding等 */
+  color: #64748B; /* 颜色 */
+}
+
+
+/* 文字说明和下拉框 */
+.toolbar-text-2 {
+  background-color: #FFFFFF;
+  padding: 0.35rem 1.85rem 0.35rem 0.35rem;   /* 上右下左 */
+  margin-right: auto;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* 文字说明 */
+.toolbar-text-2 span {
+  margin-right: 10px; /* 调整文字说明和下拉框之间的右侧间距 */
+  color: #546074;  /* 字体颜色 */
+}
+
+/* 自定义下拉框的样式 */
+.category-select-all {
+  position: relative;
+}
+
+/* 下拉框 */
+.category-select-all select {
+  appearance: none;  /*  禁用浏览器的原生外观, 这样可以创建自定义外观的下拉框。 */
+  -webkit-appearance: none; /*  为了兼容性 */
+  -moz-appearance: none; /*  为了兼容性 */
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 6px; /* 设置圆角的半径值 */
+  padding: 8px;
+  font-size: 14px;
+  color: #333;
+  width: 200px;
+  margin-left: 8px;
+}
+
+/* 下拉框箭头 */
+.category-select-all .arrow {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 10px;
+}
+
+
+/* 下拉框选项 */
+.category-select-all option {
+  padding: 8px;
+}
+
+/* 下拉框聚焦 */
+.category-select-all:focus {
+  outline: none;
+  border-color: #0084ff;
+  box-shadow: 0 0 0 2px rgba(0, 132, 255, 0.2);
+}
+
+
+/* 添加按钮 */
+.add-button-card {
+  background-color: #19BE6B;
+  color: white;
+}
+
+/* 批量删除按钮 */
+.multi-delete-button-card {
+  background-color: #FF9900;
+  color: white;
+}
+
+.add-button-card, .multi-delete-button-card {
+  margin-left: 10px;
+  padding: 0.5rem 1.85rem 0.5rem 1.85rem;   /* 上右下左 */
+}
+
+
+
+/* 编辑按钮 */
+.edit-button-card {
+  background-color: #2D8CF0;
+  color: white;
+}
+
+/* 删除按钮 */
+.delete-button-card {
+  background-color: #ED4014;
+  color: white;
+}
+
+
+
+/* 选择表格中的第6和第7列，并将其最大宽度设置为200像素。如果内容超过该宽度，溢出部分将被隐藏并显示省略号。*/
+#myTable-card td:nth-child(6),
+#myTable-card td:nth-child(7) {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left; /* 左对齐 */
+}
+
+
+
+/* 批量删除分类内容字体 */
+.choose-card label {
+  font-size: 12px; /* 设置字体大小 */
+  color: #757C8C;
+  padding: 6px;
+  white-space: nowrap; /* 防止文字换行 */
+  overflow: hidden;    /* 溢出部分隐藏 */
+  text-overflow: ellipsis;  /* 超过部分使用省略号表示 */
+}
+
+
+

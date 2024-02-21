@@ -1,0 +1,40 @@
+
+
+
+main {
+  position: fixed;
+  top: 3.6rem;
+  left: 0; /* 右侧贴紧 */
+  right: 0; /* 右侧贴紧 */
+  bottom: 0; /* 底部贴紧 */
+  background-color: #F4F4F4;
+}
+
+
+.layout-pages {
+  flex-grow: 1;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  margin: 0.55rem 0.5rem 0.5rem 0.5rem;   /* 上右下左 */
+  padding: 0.5rem 1rem 1rem 1rem;
+  height: calc(100vh - 3.6rem); /* 100vh 表示视口高度的百分比（vh 单位表示视口高度的1%）*/
+  overflow-y: scroll;
+}
+
+/* 侧边栏滚动条 */
+.layout-pages::-webkit-scrollbar {
+  width: 5px;  /* 设置滚动条的宽度 */
+  background-color: #FFFFFF;  /* 设置滚动条背景颜色 */
+}
+.layout-pages::-webkit-scrollbar-thumb {
+  background-color: #D0D0D0;  /* 设置滚动条的颜色 */
+}
+
+/*  功能栏 */
+.toolbar {
+  margin: 0.55rem 0.5rem 1rem 0.5rem;   /* 上右下左 */
+  height: 2rem;
+  display: flex; /* 使用弹性盒子布局 */
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: flex-end;
+}

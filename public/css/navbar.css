@@ -1,0 +1,144 @@
+
+/*  页眉  */
+.navbar {
+  position: fixed;  /* 会相对于浏览器视口进行定位，而不会随着页面的滚动而移动 */
+  top: 0;  /* 设置元素相对于其包含块顶部的垂直偏移量 */
+  left: 0;
+  right: 0;
+  z-index: 20;  /* 控制元素的层级顺序或叠放次序 */
+  height: 3.6rem;
+  padding: .7rem 1.5rem; /* 内边距被设置为 .7rem 的顶部和底部内边距，1.5rem 的左侧和右侧内边距 */
+  line-height: 2.2rem; /* 文本行之间的间距 */
+  background-color: #0E64C3;  /*  背景颜色 */
+  box-sizing: border-box;  /* border-box 表示元素的宽度和高度将包括内边距（padding）、边框（border）和内容的尺寸，而不会计算其中的外边距（margin）。 */
+  box-shadow: 0 2px 5px rgba(0,0,0,.06);  /* 为元素添加阴影效果 */
+}
+
+
+/*  页眉logo  */
+.navbar .logo {
+    height: 2.2rem;
+    min-width: 2.2rem;
+    margin-right: .8rem;
+    vertical-align: top;
+}
+
+/*  页眉标题  */
+.navbar .site-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    position: relative;   /*  生成一个相对定位的元素 */
+
+}
+
+/* navbar中带有这些类名的<img> 、 <span> 元素将以内联块的方式显示 */
+.navbar img, .navbar span {
+    display: inline-block;
+}
+
+
+.links {
+    position: absolute; /* 相对于最近的已定位祖先元素进行定位，如果不存在则相对于初始包含块进行定位。 */
+    right: 1.5rem;
+    top: .7rem;
+    display: flex; /* 创建弹性盒子（flexbox）布局 */
+    box-sizing: border-box; /* 元素的宽度和高度将包括边框和内边距，而不影响内容部分。*/
+    white-space: nowrap;  /*  文本将被强制在一行上显示*/
+    padding-left: 1.5rem;
+    font-size: .9rem;
+}
+
+
+.search-box {
+    flex: 0 0 auto;  /* 元素会保持其原始的尺寸（由内容决定），不会收缩或伸展以适应剩余空间或空间不足 */
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+}
+
+/* 搜索框 */
+.search-box input {
+    cursor: text;
+    width: 10rem;
+    height: 2rem;
+    color: #4e6e8e;
+    display: inline-block;
+    border: 1px solid #cfd4db;
+    border-radius: 2rem;
+    font-size: .9rem;
+    line-height: 2rem;
+    padding: 0 .5rem 0 2rem;
+    outline: none;  /* 移除元素轮廓样式的属性 */
+    transition: all .2s ease; /* 元素在属性变化时会以持续时间为 0.2 秒的动画方式平滑过渡到新的状态。 */
+    background: #fff url(../images/search.svg) .6rem .5rem no-repeat; /* #fff 表示背景颜色为白色，url(search.svg) 表示背景图像为 search.svg，.6rem .5rem 表示背景图像的位置偏移为水平方向上 0.6rem、垂直方向上 0.5rem，no-repeat 表示不要重复平铺背景图像。 */
+    background-size: 1rem; /*  背景图像的宽度和高度都被设置为 1rem。 */
+}
+
+
+
+/* 搜索结果 */
+.search-results {
+  position: fixed;
+  top: 3.6rem;
+  right: 0.4rem;
+  display: none; /* 初始隐藏搜索结果 */
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: 440px; /* 宽度为440px */
+  background-color: #FFFFFF; /* 背景颜色，根据需要进行调整 */
+  border: 1px solid #CFD4DB; /* 边框样式，根据需要进行调整 */
+  max-height: 500px; /* 你想要的最大高度 */
+  overflow-y: scroll; /* 启用垂直滚动条 */
+}
+
+/* 搜索结果滚动条 */
+.search-results::-webkit-scrollbar {
+  width: 5px;  /* 设置滚动条的宽f度 */
+  background-color: #FFFFFF;  /* 设置滚动条背景颜色 */
+}
+.search-results::-webkit-scrollbar-thumb {
+  background-color: #E1E1E1;  /* 设置滚动条的颜色 */
+}
+
+
+
+.search-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0rem .35rem 0rem .35rem;
+}
+
+
+/* 搜索汇总 */
+.search-count {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #555;
+  /* 添加其他样式属性 */
+}
+
+/* 标题栏 */
+.nav-item {
+    position: relative;
+    display: inline-block;
+    margin-left: 1.5rem;
+    line-height: 1.4rem;
+    color: #FFFFFF;
+    text-decoration: none; /* 去掉文本装饰线（如下划线） */
+}
+
+/* 带有 .nav-links 类的 <a> 元素 */
+.nav-item a {
+    color: #FFFFFF;
+    text-decoration: none; /* 去掉文本装饰线（如下划线） */
+}
+
+/* 设置具有 aria-current="page" 属性的 <a> 元素 */
+.nav-links a[aria-current="page"] {
+  margin-bottom: -2px;
+  border-bottom: 2px solid #13b9e2;
+}
