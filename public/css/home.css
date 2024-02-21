@@ -67,6 +67,7 @@
   border-left-color: #11a8cd;
   color: #11a8cd;
   font-weight: bold;
+  cursor: default; /* 鼠标为默认箭头指针 */
 }
 
 
