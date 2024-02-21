@@ -53,5 +53,5 @@ jobs:
             linux/amd64
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/Navnetic:latest
-            ${{ secrets.DOCKER_USERNAME }}/Navnetic:${{ env.app_version }}
+            ${{ secrets.DOCKER_USERNAME }}/navnetic:latest
+            ${{ secrets.DOCKER_USERNAME }}/navnetic:${{ env.app_version }}
