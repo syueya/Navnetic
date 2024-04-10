@@ -1,26 +1,17 @@
-# 第一阶段：安装依赖并构建
-FROM node:16-alpine AS build
+# 使用轻量级基础镜像 node:16-alpine
+FROM node:16-alpine
 
 # 设置工作目录
 WORKDIR /app
 
-# 复制整个项目并构建
-COPY . .
+# 复制 package.json 和 package-lock.json 文件
+COPY package*.json ./
 
-# 运行 npm install 安装依赖
-RUN npm install
+# 安装项目依赖
+RUN npm install --production
 
-# 运行 npm run build 构建项目
-RUN npm run build
-
-
-# 第二阶段：仅复制构建后的文件
-FROM node:16-alpine AS final
-WORKDIR /app
-
-# 复制第一阶段构建后的文件，排除开发依赖和 node_modules
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/public ./public
+# 将 Express 应用程序源代码复制到镜像中，排除 node_modules 文件夹
+COPY --chown=node:node . ./
 
 
 # 创建两个匿名卷
