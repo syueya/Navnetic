@@ -6,6 +6,11 @@ WORKDIR /app
 
 # 复制整个项目并构建
 COPY . .
+
+# 运行 npm install 安装依赖
+RUN npm install
+
+# 运行 npm run build 构建项目
 RUN npm run build
 
 
